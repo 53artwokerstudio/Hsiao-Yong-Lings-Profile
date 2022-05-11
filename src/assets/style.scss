@@ -1,0 +1,31 @@
+// @import "tailwindcss/base";
+// @import "tailwindcss/components";
+// @import "tailwindcss/utilities";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {@apply text-xl text-myBrown-dark font-bold tracking-widest mb-3;}
+    h2 {@apply text-xl text-myBrown-dark font-bold tracking-widest  mb-3;}
+    p  {@apply   text-myBrown-dark tracking-wide leading-7;}
+    .pb{@apply   text-myBrown-dark font-bold tracking-wide leading-7;}
+    span{@apply inline-block bg-myBlue px-1 mb-2;}
+}
+
+@layer components {
+    .box{
+        min-height: 700px;
+        @media (min-width: 640px) {
+        @apply  px-24 py-8 max-w-7xl;}
+
+        @apply  bg-white rounded-3xl px-8 py-4 shadow-xl mx-auto mb-10;
+    }
+}
+
+@layer utilities {
+    .ItemSpacing{@apply mb-12;}
+    .AreaSpacing{@apply mb-32;}
+    .ContainerSpacing{@apply my-10;}
+}

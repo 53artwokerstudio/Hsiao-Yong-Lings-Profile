@@ -1,4 +1,4 @@
-# vuehotel-2
+# test
 
 ## Project setup
 ```

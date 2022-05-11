@@ -1,91 +1,135 @@
 <template>
-  <div class="home">
+  <div class="home ContainerSpacing">
 
-    <div class="index-outside relative flex justify-center items-center">
-    
-    <div class="index-main absolute z-0 flex items-center flex-col sm:flex-row">
-            
-            <div class="index-info flex flex-col items-center justify-between h-full">
+    <img class="myPhoto" alt="Hello!期待您的聯繫！" src="../assets/img/myPhoto.png" />
 
-                <img src="../assets/img/logo.3fafe707.svg" alt="" srcset="" class="sm:mb-12">
+    <div>
+      <div class="InfoTitle ItemSpacing">
+        <h1>蕭詠齡</h1>
+        <h2>Hsiao Yong Ling</h2>
+      </div>
+      <div class="ItemSpacing">
+        <p>
+          嗨！我是蕭詠齡，長年接案經驗使我可以獨立完成專案，也總是與客戶、同事維持良好的合作關係。
+          <br/>
+          <br/>
+          熟悉 <span>HTML5 / CSS3 / ES6</span> 前端技術，能夠透過
+          <span>Bootstrap、JQuery</span> 等框架精確完成高度還原設計稿且符合 
+          <span>SEO</span> 與 <span>RWD</span> 的網頁，並使用預處理器進行網頁優化。
+        </p>
+      </div>
 
-                <div class="index-info-text sm:mb-12">
-                    <h1 class="mb-6">好室旅店。HOUSE HOTEL</h1>
-                    <ul>
-                        <li><p>花蓮縣花蓮市國聯一路1號</p></li>
-                        <li><p>03-8321155</p></li>
-                        <li><p>HOUSE@HOTEL.COM</p></li>
-                    </ul>
-                </div> 
-                
-                <ul class="index-bg-dot flex">
-                    <li v-for=" item in bgPic"
-                    :key="item.id" 
-                    @click="changeBgPic(item)"></li>
-                </ul>
-            </div>
 
-            <div class="flex flex-col items-end">
-              <indexRoomlist/>
+      <ul class="ItemSpacing">
+      <li class="InfoList">
+        <div class="InfoListTitle">
+          <p>Operating System</p>
+        </div>
+        <div class="InfoListIcon">
+            <img src="../assets/img/OperatingSystem-1.png" alt="">
+            <img src="../assets/img/OperatingSystem-2.png" alt="">
+        </div>
+      </li>
+      <li class="InfoList">
+        <div class="InfoListTitle">
+          <p>Language</p>
+        </div>
+        <div class="InfoListIcon">
+          <img src="../assets/img/Language-1.png" alt="">
+          <img src="../assets/img/Language-2.png" alt="">
+          <img src="../assets/img/Language-3.png" alt="">
+        </div>
+      </li>
+      <li class="InfoList">
+        <div class="InfoListTitle">
+          <p>Contact Me</p>
+        </div>
+        <div class="InfoListTitle">
+            <CopyBtn/>
+        </div>
+      </li>
+      </ul>
 
-              <a href="https://challenge.thef2e.com/user/2232?schedule=3968#works-3968"
-                 target="_blank" rel="noreferrer noopenner"
-                 class="text-white mt-4 opacity-50">
-                 UI DESIGN by Pei-Chuan Li
-              </a>
-            </div>
+      <div class="OutInfoItemBox">
+
+         <InfoItemBox>
+           <template v-slot:InfoTitle>
+                積極自主學習
+           </template>
+           <template v-slot:InfoText>
+                  積極參與相關活動使人脈及知識活化
+                  <br> 增進新知同時了解業界現況
+           </template>
+         </InfoItemBox>
+
+         <InfoItemBox>
+           <template v-slot:InfoTitle>
+                設計跨足前端
+           </template>
+           <template v-slot:InfoText>
+                 具 UI / UX 概念及 UI 
+                 <br> 設計經驗支援設計師加速專案開發流程
+           </template>
+         </InfoItemBox>
+      </div>
+
     </div>
 
-
-    <div class="index-bg w-full h-screen static -z-50">
-        <img :src="NowBgPic"
-             class="object-cover w-full h-screen"
-             alt="" 
-             srcset="">
-    </div>
-
-
-</div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import indexRoomlist from "@/components/indexRoomlist.vue";
+import InfoItemBox from "@/components/InfoItemBox.vue";
+import CopyBtn from "@/components/CopyBtn.vue";
 
 export default {
   name: "Home",
-  components: { indexRoomlist },
-  data() {
-      return {
-          NowBgPic:require('../assets/img/house/photo-1507149833265-60c372daea22.jpeg'),
-          bgPic:[
-              { id: 1,
-                bgPicUrl:require('../assets/img/house/photo-1507149833265-60c372daea22.jpeg')},
-              { id: 2,
-                bgPicUrl:require('../assets/img/house/photo-1551516594-56cb78394645.jpeg')},
-              { id: 3,
-                bgPicUrl:require('../assets/img/house/photo-1549490148-d7304e934d25.jpeg')},
-              { id: 4,
-                bgPicUrl:require('../assets/img/house/photo-1523217582562-09d0def993a6.jpeg')},
-          ],
-      }
-  },
-  methods: {
-      changeBgPic(item){
-          let vm = this;
-          vm.NowBgPic = item.bgPicUrl;
-      }
-  },
+  components: { InfoItemBox , CopyBtn },
 };
 </script>
 
 <style lang="postcss">
-    .index-main         {@apply  h-4/6 sm:h-auto;}
-    .index-info         {@apply  sm:mr-10;}
-    .index-info-text    {@apply  text-white text-center;}
-    .index-info-text ul {@apply  leading-8;}
+  .myPhoto{
+    @apply max-w-full h-full mb-10 mx-auto;
+  }
 
-    .index-bg-dot li {@apply w-3 h-3 rounded-full block border border-white transition  mr-2 bg-transparent hover:bg-white;}
-    .index-bg-dot li:last-child {@apply mr-0;}
+  .home{
+    @apply flex flex-wrap 
+    sm:flex-nowrap;
+  }
+
+ .InfoTitle{
+    @apply flex;
+  }
+
+  .InfoTitle h1{
+      @apply tracking-large;
+  }
+
+  .InfoTitle h2{
+    @apply text-myBrown;
+    }
+
+  .InfoList{
+    @apply flex items-center mb-6;
+  }
+
+  .InfoListIcon {
+    @apply flex items-center ;
+  }
+
+  .InfoListIcon img {
+    @apply mr-4;
+    }
+
+  .InfoListTitle{
+    @apply font-bold  w-40;
+  }
+
+  .OutInfoItemBox{
+    @apply flex flex-wrap justify-center
+    sm:justify-between;
+  }
+
 </style>

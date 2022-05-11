@@ -1,5 +1,5 @@
 {
-  "name": "house-hotel",
+  "name": "hsaio-yong-ling-s-profile",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,13 +10,11 @@
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "autoprefixer": "^9.8.8",
-    "axios": "^0.27.2",
     "core-js": "^3.6.5",
     "postcss": "^7.0.39",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
-    "v-calendar": "^2.4.1",
+    "v-clipboard": "^2.2.3",
     "vue": "^2.6.11",
-    "vue-axios": "^3.4.1",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
@@ -31,10 +29,9 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.12.0",
     "prettier": "^2.2.1",
+    "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "vue-cli-plugin-tailwind": "~3.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
